@@ -33,7 +33,7 @@ class Server:
         assert type(page).__name__ == "int" and page > 0
         assert type(page_size).__name__ == "int" and page_size > 0
         index: Tuple[int, int] = index_range(page, page_size)
-        data: List[List] = self.dataset()
+        data = self.dataset()
 
         if index[0] <= len(data):
             return self.__dataset[index[0]:index[1]]

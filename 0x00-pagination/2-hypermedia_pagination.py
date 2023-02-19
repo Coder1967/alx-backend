@@ -33,8 +33,8 @@ class Server:
         """
         assert type(page).__name__ == "int" and page > 0
         assert type(page_size).__name__ == "int" and page_size > 0
-        index: Tuple[int, int] = index_range(page, page_size)
-        data: List = self.dataset()
+        index = index_range(page, page_size)
+        data = self.dataset()
 
         if index[0] <= len(data):
             return self.__dataset[index[0]:index[1]]
@@ -46,11 +46,11 @@ class Server:
         takes page and page_size as arguments and return data
         from a csv file matching those specifications in dict form
         """
-        data: List[List] = self.dataset()
-        total_pages: int = math.floor(len(data) / page_size)
-        prev_page: int = page - 1
-        next_page: int = page + 1
-        values: List[List] = self.get_page(page, page_size)
+        data = self.dataset()
+        total_pages = math.floor(len(data) / page_size)
+        prev_page = page - 1
+        next_page = page + 1
+        values = self.get_page(page, page_size)
 
         if page - 1 == 0:
             prev_page = None
