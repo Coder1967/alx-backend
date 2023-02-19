@@ -1,7 +1,9 @@
 import csv
 import math
 from typing import List, Tuple, Dict
-
+"""
+Hypermedia Pagination
+"""
 
 class Server:
     """Server class to paginate a database of popular baby names.

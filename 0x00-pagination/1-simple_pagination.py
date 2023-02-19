@@ -1,6 +1,9 @@
 import csv
 import math
 from typing import List, Tuple
+"""
+Simple pagination
+"""
 
 
 class Server:
