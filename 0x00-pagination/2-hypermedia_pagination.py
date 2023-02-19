@@ -5,6 +5,7 @@ from typing import List, Tuple, Dict
 Hypermedia Pagination
 """
 
+
 class Server:
     """Server class to paginate a database of popular baby names.
     """
@@ -42,7 +43,7 @@ class Server:
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
         """
         takes page and page_size as arguments and return data
-        from a csv file matching those specifications
+        from a csv file matching those specifications in dict form
         """
         data: List[List] = self.dataset()
         total_pages: int = math.floor(len(data) / page_size)

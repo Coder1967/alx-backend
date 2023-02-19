@@ -26,6 +26,9 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """
+        returns data for that specified page
+        """
         assert type(page).__name__ == "int" and page > 0
         assert type(page_size).__name__ == "int" and page_size > 0
         index: Tuple[int, int] = index_range(page, page_size)
