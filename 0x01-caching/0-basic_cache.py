@@ -18,7 +18,6 @@ class BasicCache(BaseCaching):
             return
         self.cache_data[key] = item
 
-
     def get(self, key):
         """
         gets data from the cache_data dictioinary

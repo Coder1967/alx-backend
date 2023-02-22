@@ -17,7 +17,6 @@ class LIFOCache(BaseCaching):
         self.tracker = []
         super().__init__()
 
-
     def put(self, key, item):
         """
         adds a new data to the cache_data
@@ -35,7 +34,6 @@ class LIFOCache(BaseCaching):
             del self.cache_data[item_key]
             print("DISCARD: {}".format(item_key))
         self.tracker.append(key)
-
 
     def get(self, key):
         """

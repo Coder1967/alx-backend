@@ -32,7 +32,6 @@ class LRUCache(BaseCaching):
             print("DISCARD: {}".format(self.tracker[0]))
             del self.cache_data[self.tracker[0]]
             self.tracker.pop(0)
-        
         if key in self.tracker:
             self.tracker.pop(self.tracker.index(key))
         self.tracker.append(key)

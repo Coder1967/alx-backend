@@ -17,7 +17,6 @@ class FIFOCache(BaseCaching):
         self.tracker = []
         super().__init__()
 
-
     def put(self, key, item):
         """
         adds a new data to the cache_data
