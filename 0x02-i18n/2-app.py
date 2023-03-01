@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
-"""Basic Babel Setup"""
-from flask import Flask, render_template
+"""module for task 2"""
+from flask import Flask, render_template, request
 from flask_babel import Babel
 
 
 class Config:
     """Config class for flask app
     """
-    DEBUG = True
     LANGUAGES = ['en', 'fr']
     BABEL_DEFAULT_LOCALE = 'en'
     BABEL_DEFAULT_TIMEZONE = 'UTC'
@@ -20,8 +19,20 @@ babel = Babel(app)
 
 @app.route('/')
 def index():
-    """view function for index route"""
-    return render_template('1-index.html')
+    """view function for root route
+    Returns:
+        html: homepage
+    """
+    return render_template('2-index.html')
+
+
+@babel.localeselector
+def get_locale():
+    """get best language match
+    Returns:
+        str: best match
+    """
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
 if __name__ == '__main__':
