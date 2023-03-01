@@ -34,6 +34,7 @@ def index():
     return render_template('5-index.html')
 
 
+@babel.localeselector
 def get_locale():
     """get best language match
     Returns:
@@ -53,7 +54,6 @@ def get_user():
         return None
     return users.get(int(user_id))
 
-babel.init_app(app, locale_selector=get_locale)
 @app.before_request
 def before_request():
     """sets user gotten from get_user as a global
